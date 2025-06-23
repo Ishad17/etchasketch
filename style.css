@@ -1,4 +1,16 @@
 button{
     padding:10px;
     background-color: tan;
+    margin-bottom: 5px;
+}
+
+#container{
+    border: 2px solid green;
+    display: flex;
+}
+
+.new-box{
+    margin: 5px;
+    padding: 10px;
+    background-color: tomato;
 }
