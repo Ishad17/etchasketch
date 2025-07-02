@@ -27,9 +27,6 @@ function createGrid(size){
 
     const newDiv = document.createElement("div");
     newDiv.classList.add(`row`);
-    // newDiv.textContent = `${j + 3}`;
-    // newDiv.style.margin = '2px'
-
     container.appendChild(newDiv);
 
     for(let i = 1; i<= size; i++){
@@ -42,24 +39,39 @@ function createGrid(size){
         
             const allDivs = document.querySelectorAll('.second');
             allDivs.forEach((div) => {
-                        
-                            div.addEventListener('click', () => {
-                                div.classList.add('clicked');
-                             });
+                      
+                            // div.addEventListener('click', () => {
+                            //     div.classList.add('clicked');
+                            //  });
 
                             div.addEventListener('mouseenter',() => {
-                                div.classList.add('hover');
-                             });
+                            
+                                let currentOpacity = parseFloat(div.style.opacity);
 
-                            div.addEventListener('mouseleave',() => {
-                                div.classList.remove('hover');
-                             });
+                                console.log(div.style.opacity);
 
-                             div.addEventListener('dblclick', () => {
-                                div.classList.remove('clicked');
-                                div.classList.remove('hover');
+                                // If no opacity set yet, default to 0
+                                if (isNaN(currentOpacity)) {
+                                    currentOpacity = 0;
+                                }
 
-                             });
+                                // Increase by 0.5, max 1.0
+                                const newOpacity = Math.min(currentOpacity + 0.1, 1);
+                                console.log(div.style.opacity = newOpacity.toString());
+
+                                // Optional: change background for visibility
+                                div.style.backgroundColor = 'pink';
+
+                            });
+
+                            // div.addEventListener('mouseleave',() => {
+                            //     div.classList.remove('hover');
+                            //  });
+
+                            //  div.addEventListener('dblclick', () => {
+                            //     div.classList.remove('clicked');
+                            //     div.classList.remove('hover');
+                            //  });
 
 
         });
