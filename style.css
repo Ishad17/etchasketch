@@ -5,19 +5,41 @@ button{
 }
 
 #container{
-    border: 2px solid green;
-    background-color: yellowgreen;
     display: flex;
-    min-height: 100px;
-    padding: 1px;
-    flex-direction: column;
+    flex-direction: column;;
+    width: 750px;
+    height: 750px;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.second{
+    background-color: rgb(113, 160, 52);
+    flex:1;
+    /* max-width: 10px;
+    padding: 30px; */
+    margin: 0.25px;
+    width: 10px;
+    aspect-ratio: 1/1;
 
 }
 
+.clicked {
+  background-color: rgb(165, 50, 8) !important;
+  transform: scale(1.07);
+}
+
+.hover {
+  background-color: rgb(10, 153, 153);
+  color: white;
+  cursor: pointer;
+  /* transition: all 0.3s ease; */
+  transform: scale(1.07); 
+} 
+
 .row{
-    padding: 5px;
     display: flex;
-    gap: 5px;
+
 }
 
 .fade-in {
@@ -32,15 +54,3 @@ button{
 }
 
 
-.second{
-    background-color: teal;
-    flex:1;
-    padding: 5px;
-    margin: 2px;
-}
-
-/* .flex-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; 
-} */
