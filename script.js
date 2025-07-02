@@ -15,7 +15,9 @@ addButton.addEventListener("click", () => {
         return;
     }
     createGrid(size);
+
 });
+
     
 
 
@@ -26,10 +28,7 @@ function createGrid(size){
     for(let j = 1; j<= size; j++){
 
     const newDiv = document.createElement("div");
-    newDiv.classList.add(`row`);
-    // newDiv.textContent = `${j + 3}`;
-    // newDiv.style.margin = '2px'
-
+    newDiv.classList.add("row");
     container.appendChild(newDiv);
 
     for(let i = 1; i<= size; i++){
@@ -39,98 +38,30 @@ function createGrid(size){
         // secDiv.textContent = `${j}`;
         newDiv.append(secDiv);
         }
-        
-            const allDivs = document.querySelectorAll('.second');
-            allDivs.forEach((div) => {
-                        
-                            div.addEventListener('click', () => {
-                                div.classList.add('clicked');
-                             });
+    }
 
-                            div.addEventListener('mouseenter',() => {
-                                div.classList.add('hover');
-                             });
+        const allDivs = document.querySelectorAll('.second');
+        allDivs.forEach((div) => {
 
-                            div.addEventListener('mouseleave',() => {
-                                div.classList.remove('hover');
-                             });
+            div.addEventListener('mouseenter', () => {
+                    div.classList.add('hover');
+                    // Get current opacity or default to 0
+                let currentOpacity = parseFloat(div.style.opacity);
+                    // Increase opacity by 0.1 (max 1.0)
+                if (isNaN(currentOpacity)) currentOpacity = 0;
 
-                             div.addEventListener('dblclick', () => {
-                                div.classList.remove('clicked');
-                                div.classList.remove('hover');
+                currentOpacity = Math.min(currentOpacity + 0.1, 1);
+                div.style.opacity = currentOpacity.toString();
 
-                             });
+                });
+
+            // div.addEventListener('mouseleave', () => {
+            //     div.classList.remove('hover');
+            // });
+
+
+            
 
 
         });
-
-
-
-
-    }
-
-
-
-
 }
-
-
-    //      played with javascript on hovereffects
-        
-
-
-    // });
-
-//     //      played with javascript on hovereffects
-//         const allDivs = document.querySelectorAll('.second');
-//         allDivs.forEach((div) => {
-
-//         div.addEventListener('mouseenter', () => {
-//         div.style.backgroundColor = 'rgb(1, 3, 3)';
-//         div.style.color = 'white';
-//         // div.style.transform = 'scale(1.1)';
-//         // div.style.transition = 'all 0.3s ease';
-//         });
-
-        
-
-//         div.addEventListener('mouseleave', () => {
-//         div.style.backgroundColor = '';
-//         div.style.color = '';
-//         div.style.transform = '';
-//     });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-////////////////////////
-
-// function startGame() {
-//     console.log("Game Started!");
-// }
-
-// startButton.addEventListener("click", startGame);
-
-
-////////////////////////
-
-// startButton.addEventListener("click", function() {
-//     // Your code here
-//     console.log("Start button clicked!");
-// });
-
-////////////////////////
