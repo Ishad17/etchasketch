@@ -28,7 +28,7 @@ function createGrid(size){
     for(let j = 1; j<= size; j++){
 
     const newDiv = document.createElement("div");
-    newDiv.classList.add(`row`);
+    newDiv.classList.add("row");
     container.appendChild(newDiv);
 
     for(let i = 1; i<= size; i++){
@@ -55,9 +55,12 @@ function createGrid(size){
 
                 });
 
-            div.addEventListener('mouseleave', () => {
-                div.classList.remove('hover');
-            });
+            // div.addEventListener('mouseleave', () => {
+            //     div.classList.remove('hover');
+            // });
+
+
+            
 
 
         });
