@@ -44,20 +44,21 @@ function createGrid(size){
         allDivs.forEach((div) => {
 
             div.addEventListener('mouseenter', () => {
-                    div.classList.add('hover');
-                    // Get current opacity or default to 0
-                let currentOpacity = parseFloat(div.style.opacity);
-                    // Increase opacity by 0.1 (max 1.0)
-                if (isNaN(currentOpacity)) currentOpacity = 0;
-
-                currentOpacity = Math.min(currentOpacity + 0.1, 1);
-                div.style.opacity = currentOpacity.toString();
-
+                div.style.background = 'rgb(4, 170, 123)'
+                // div.style.opacity = '0.1';
                 });
 
-            // div.addEventListener('mouseleave', () => {
-            //     div.classList.remove('hover');
-            // });
+            div.addEventListener('mouseleave', () => {
+                // Only reset background if NOT clicked
+                if (!div.clicked) {
+                    div.style.background = '';
+
+                }
+            });
+             div.addEventListener('click',() =>{
+                div.style.background = 'rgb(255, 72, 16)'
+                div.clicked ='true';
+             })
 
 
             
