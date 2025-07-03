@@ -25,20 +25,6 @@ button{
     transition: opacity 0.2s ease;
 }
 
-
-
-
-/* .clicked {
-  background-color: rgb(2, 59, 43) !important;
-  transform: scale(1.07);
-} */
-/* 
-.hover {
-  background-color: rgb(254, 13, 85);
-  color: white;
-  cursor: pointer;
- }  */
-
 .row{
     display: flex;
 
